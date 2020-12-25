@@ -1,0 +1,65 @@
+<!Doctype html>
+<head>
+    <title>playlist</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+        }
+      tr{
+        cursor: pointer;
+      }
+      table{
+          border-radius: 10px;
+          background-color: transparent;
+          color:aliceblue;
+      }
+     </style>
+</head>
+<body>
+    <div id="Bollywood_s">
+        <audio id="mysong">
+            <source src="" type="audio/mp3">
+            </audio>
+        
+        <table border="1" width="310" height="200" border-radius:"10" style="font-family:cursive">
+            <tr><th>Tvd Playlist</th>
+            <tr><td id="tb1"></td></tr>
+            <tr><td id="tb2"></td></tr>
+            <tr><td id="tb3"></td></tr>
+            <tr><td id="tb4"></td></tr>
+            <tr><td id="tb5"></td></tr>
+            <tr><td id="tb6"></td></tr>
+            <tr><td id="tb7"></td></tr>
+            <tr><td id="tb8"></td></tr>
+
+        </table>
+        <script>
+         var song=["song8","song9","song10","song11","song12","song13","song14","song15"];
+         var title=["The Vampire Diaries 1x02 Gravity","Vampire Diaries- Down ( Jason Walker )","Vampire Diaries Come Back When You Can - Barcelona","Vampire Diaries Plumb","Vampire Diaries Only One - Alex Band","Vampire Diaries Within Temptation - All I Need  (dance scene)"];
+         document.getElementById("tb1").innerHTML=song[0]+": "+title[0];
+         document.getElementById("tb2").innerHTML=song[1]+": "+title[1];
+        document.getElementById("tb3").innerHTML=song[2]+": "+title[2];
+        document.getElementById("tb4").innerHTML=song[3]+": "+title[3];
+        document.getElementById("tb5").innerHTML=song[4]+": "+title[4];
+        document.getElementById("tb6").innerHTML=song[5]+": "+title[5];
+        document.getElementById("tb7").innerHTML=song[6]+": "+title[6];
+       // document.getElementById("tb8").innerHTML=song[7]+": "+title[7];
+
+        document.getElementById("tb1").onclick=function(){
+            if(mysong.paused){
+           mysong.src=song[0]+".mp3";
+           mysong.play();
+            }
+        }
+      
+        
+        </script>
+    </div>
+    <div id="English_s">
+    </div>
+    <div id="p_song">
+    </div>
+
+</body>
+</html>
