@@ -197,7 +197,7 @@
                 <li><a href="#"onclick="document.getElementById('contents2').style.cssText=''">ABOUT</li>
                 <li><a href="#">MUSIC</a>
                     <ul>
-                        <li><a href="#" onclick="document.getElementById('contents1').style.cssText=''">Bollywood</a></li>
+                        <li><a href="#" onclick="bolly()">Divu's Fav</a></li>
                         <li><a href="#" onclick="holly()" >Hollywood</a></li>
                         <li><a href="#"onclick=tvd()>TVD Special</a></li>
                     </ul>
@@ -259,6 +259,58 @@
     var title=["Heropanti-Tere Bina | Tiger Shroff | Kriti Sanon","Nea - Some Say","Tera Nasha - The Bilz & Kashif","Shakuna De _ Time  Machine 3","Mund Ma Tupuli Saji ge__ Latest Garhwali","KHYAAL RAKHYA KAR - Neha Kakkar ft. RohanPreet","Jogi-|Shaadi Mein Zaroor Aana |Rajkummar Rao,Kriti K","Tu Banja Gali Benaras Ki | Asees Kaur | Shaadi Mein Zaroor Aana"];
     var i=0;
     count=0;
+     //bollywood fun
+    function bolly(){
+        alert("Divu's favourite playlist activaited");
+        document.getElementById('contents1').style.cssText='';
+        var song=["song","song1","song2","song3","song4","song5","song6","song7"];
+        var title=["Heropanti-Tere Bina | Tiger Shroff | Kriti Sanon","Nea - Some Say","Tera Nasha - The Bilz & Kashif","Shakuna De _ Time  Machine 3","Mund Ma Tupuli Saji ge__ Latest Garhwali","KHYAAL RAKHYA KAR - Neha Kakkar ft. RohanPreet","Jogi-|Shaadi Mein Zaroor Aana |Rajkummar Rao,Kriti K","Tu Banja Gali Benaras Ki | Asees Kaur | Shaadi Mein Zaroor Aana"];
+        var mysong=document.getElementById("mysong");
+    var icon=document.getElementById("icon");
+    var icon_prev=document.getElementById("icon_prev");
+    var icon_next=document.getElementById("icon_next");
+    var i=0;
+    count=0;
+    icon.onclick=function(){
+     
+     if(mysong.paused){
+         mysong.src=song[count]+".mp3";
+         mysong.play();
+      
+         icon.src="media/play.png";
+         document.getElementById("circle").style.animation="rotation 6s infinite linear";
+         document.getElementById("songname").innerHTML="NOW PLAYING......"+song[count]+" "+title[count];
+     }
+     else if(mysong.paused && (count==0)){
+      mysong.src=song[0]+".mp3";
+      mysong.play();
+      icon.src="media/play.png";
+      }
+    
+     else{
+       mysong.pause();
+       icon.src="media/pause.png";
+      }
+}
+  icon_next.onclick=function next(){
+     
+     count=count+1;
+     var j=song[count];
+     mysong.src=j+".mp3";
+     mysong.play();
+     document.getElementById("songname").innerHTML="NOW PLAYING......"+song[count]+" "+title[count];
+
+  }
+  icon_prev.onclick=function prev(){
+      count=count-1;
+      var j=song[count];
+      mysong.src=j+".mp3";
+      mysong.play();
+      document.getElementById("songname").innerHTML="NOW PLAYING......"+song[count]+" "+title[count];
+
+  }
+
+//bollywood ends
     function holly(){ 
         alert("Sorry .please Suggest some hollywood songs to add");
     }
